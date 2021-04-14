@@ -19,7 +19,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 		</span>    
 		<div class="a-thumb">
 			<a href="<?php $this->permalink() ?>">
-				<img src="https://media.ottoli.cn/wp-content/uploads/fonts-512x288.jpg">
+				<img src="<?php Help::getPostImg($this); ?>">
 			</a>
 		</div>
 		<div class="a-post">

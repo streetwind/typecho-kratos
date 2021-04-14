@@ -4,7 +4,7 @@
 /*
  * @Author: Rwind
  * @Date: 2021-04-01 23:51:41
- * @LastEditTime: 2021-04-14 18:33:28
+ * @LastEditTime: 2021-04-14 18:50:38
  * @LastEditors: Please set LastEditors
  * @Description: 主题帮助类
  * @FilePath: \typecho\usr\themes\rwind\inc\Help.php
@@ -42,13 +42,13 @@ class Help
         if (count($img) > 0 && count($img[0]) > 0) {
             //  返回图片
             return $img[1][0];
-        } else {
-            if ($$archive->options->defaultThumbnail) {
-                return $$archive->options->defaultThumbnail();
-            } else {
-                //  如果没有匹配到就返回 none
-                return 'none';
-            }
+        } else {      
+            $options = Helper::options();
+            if ($options->defaultThumbnail){
+                return $options->defaultThumbnail();
+            }else{
+                return $options->themeUrl('assets/img/BookThumbnail.jpg');;
+            }            
         }
     }
 }

@@ -1,16 +1,8 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-/*
- * @Author: your name
- * @Date: 2021-03-28 14:17:16
- * @LastEditTime: 2021-04-14 18:32:40
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \typecho\usr\themes\rwind\sidebar.php
- */
 
 <div class="col-lg-4 sidebar d-none d-lg-block" id="secondary" role="complementary">
     <div class="widget w-about">
-        <div class="background" style="background:url(<?php echo Help::getPostImg($this); ?>) no-repeat center center;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+        <div class="background" style="background:url(https://cdn.jsdelivr.net/gh/5iux/uploads/pic/20200624092748.jpg) no-repeat center center;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
         <div class="wrapper text-center">
             <a href="<?php $this->options->adminUrl(); ?>">
                 <?php $this->author->gravatar(32);?>
