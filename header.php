@@ -21,13 +21,15 @@
     <!-- 静态资源文件 -->
     <?php if (Config::isEnabled('enableCDN', 'RWindConfig')): ?>
         <!-- 公共CDNJS资源 -->
-        <link rel="stylesheet" href="https://libs.cdnjs.net/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
-        <script src="https://libs.cdnjs.net/jquery/1.10.0/jquery.min.js"></script>
-        <script src="https://libs.cdnjs.net/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/layer.min.js"></script>
+        <link href="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/theme/default/layer.min.css" rel="stylesheet">
         
         
         <?php if (Config::isEnabled('enablePjax', 'RWindConfig')): ?>
-            <script src="https://libs.cdnjs.net/jquery.pjax/0.9/jquery.pjax.min.js"></script>
+            <script src="https://cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
         <?php endif; ?>
 
     <?php  else: ?>
