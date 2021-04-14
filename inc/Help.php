@@ -4,7 +4,7 @@
 /*
  * @Author: Rwind
  * @Date: 2021-04-01 23:51:41
- * @LastEditTime: 2021-04-14 20:40:26
+ * @LastEditTime: 2021-04-14 21:08:14
  * @LastEditors: Please set LastEditors
  * @Description: 主题帮助类
  * @FilePath: \typecho\usr\themes\rwind\inc\Help.php
@@ -41,13 +41,13 @@ class Help
         //  判断是否匹配到图片
         if (count($img) > 0 && count($img[0]) > 0) {
             //  返回图片
-            return $img[1][0];
+            echo $img[1][0];
         } else {      
             $options = Helper::options();
             if ($options->defaultThumbnail){
-                return $options->defaultThumbnail();
+                echo $options->defaultThumbnail();
             }else{
-                return $options->themeUrl('assets/img/BookThumbnail.jpg');;
+                echo $options->themeUrl('assets/img/BookThumbnail.jpg',$options->theme);                
             }            
         }
     }
