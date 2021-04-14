@@ -57,6 +57,16 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     	</div>   
 	</div>
 <?php endwhile; ?>
+<div class='paginations'>
+<?php $this->pageNav('<i class="kicon i-larrows"></i></i>', '<i class="kicon i-rarrows"></i>',3, '...', 
+	array('wrapTag' => 'ul',
+		  'wrapClass' => 'pagination', 
+		  'itemTag' => 'li',  
+		  'textTag' => 'a', 
+		  'currentClass' => 'active', 
+		  'prevClass' => 'prev', 
+		  'nextClass' => 'next',)); ?>
+</div>
 </div><!-- end #main-->
 
 <?php $this->need('sidebar.php'); ?>
