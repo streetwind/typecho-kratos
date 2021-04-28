@@ -4,9 +4,7 @@
  */
 (function () {
     "use strict";
-  
-    var KRATOS_VERSION = "3.2.8";
-  
+ 
     var navbarConfig = function () {
       $("#navbutton").on("click", function () {
         $(".navbar-toggler").toggleClass("nav-close");
@@ -99,18 +97,22 @@
           return false;
         } else {
           $(this).addClass("done");
-          layer.msg(kratos.thanks);
+          layer.msg("感谢支持");
           var id = $(this).data("id"),
             action = $(this).data("action");
           var ajax_data = {
             action: "love",
-            um_id: id,
+            up:id,
+            cid: id,
             um_action: action,
           };
+          
           $.post(
-            kratos.site + "/wp-admin/admin-ajax.php",
+            "/testaction",
             ajax_data,
-            function (data) {}
+            function (data) {
+              layer.msg(data);
+            }
           );
           return false;
         }
@@ -167,14 +169,17 @@
         event.preventDefault();
       });
     };
-  
-    var consoleConfig = function () {
-      console.log(
-        "\n Kratos v" +
-          KRATOS_VERSION +
-          "\n\n https://github.com/vtrois/kratos \n\n"
-      );
-    };
+
+    var mermaidConfig= function(){
+      mermaid.initialize({startOnLoad:true});      
+      $('code.language-mermaid').each(function(i,n){
+        var obj = $(n)  
+        mermaid.init(undefined, obj);      
+        $(this).parent().replaceWith(function(){
+          return "<div>"+obj.html()+"</div>";
+        })
+      })
+    }
   
     $(function () {
       accordionConfig();
@@ -186,7 +191,7 @@
       smiliesConfig();
       postlikeConfig();
       donateConfig();
-      //consoleConfig();
+      mermaidConfig();
     });
   })();
   

@@ -26,10 +26,17 @@
         <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/layer.min.js"></script>
         <link href="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/theme/default/layer.min.css" rel="stylesheet">
-        
-        
+        <script src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/prism.min.js" data-filter-known></script>
+        <link href="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet">
         <?php if (Config::isEnabled('enablePjax', 'RWindConfig')): ?>
             <script src="https://cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+        <?php endif; ?>
+        <?php if (Config::isEnabled('enableMermaid', 'RWindConfig')): ?>
+            <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <?php endif; ?>
+        <?php if (Config::isEnabled('enableMathJax', 'RWindConfig')): ?>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <?php endif; ?>
 
     <?php  else: ?>

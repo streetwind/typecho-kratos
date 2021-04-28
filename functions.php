@@ -3,10 +3,21 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 // 定义宏版本
 define('ARIA_VERSION', '0.1');
 
+require_once 'wget/init.php';
+
+//配置
 require_once 'inc/Config.php';
+//帮助
 require_once 'inc/Help.php';
+//Wget
+require_once 'inc/Wget.php';
+//路由
+require_once 'inc/Route.php';
+
+
 
 function themeConfig($form) {
+
     $icoUrl = new Typecho_Widget_Helper_Form_Element_Text('icoUrl', NULL, NULL, _t('站点 ICO 图标'), _t('在这里填入一个ico图标 URL 地址, 以在网站标题前加上一个 ico'));
     $form->addInput($icoUrl);
 
@@ -75,7 +86,8 @@ function themeConfig($form) {
             'enablePjax' => '开启PJAX（启用后会强制关闭评论反垃圾保护）',
             'enableAjaxComment' => '开启AJAX评论',            
             'enableLazyload' => '开启图片懒加载<a href="https://appelsiini.net/projects/lazyload" target="_blank">lazyload</a>',            
-            'enableMathJax' => '启用MathJax'
+            'enableMathJax' => '启用MathJax',
+            'enableMermaid' => '启用Mermaid'
         ),
         array('enableCDN'),
         '开关设置'
@@ -93,5 +105,12 @@ function themeFields($layout)
     $layout->addItem($thumbnail);
     $layout->addItem($previewContent);
     $layout->addItem($showTOC);
+}
+
+function themeInit($archive)
+{
+// 如下两行替换md解析器
+Typecho_Plugin::factory('Widget_Abstract_Contents')->markdown = ['theme_plugin', 'markdown'];
+Typecho_Plugin::factory('Widget_Abstract_Comments')->markdown = ['theme_plugin', 'markdown'];
 }
 

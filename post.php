@@ -1,5 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
+
 <?php $this->need('header.php'); ?>
 <div class="col-lg-8 details">
     <div class="article">
@@ -41,7 +42,7 @@
         </div>
         <div class="share float-md-right text-center">
             <!-- <a href="javascript:;" id="donate" class="btn btn-donate mr-3" role="button"><i class="kicon i-donate"></i> 打赏</a> -->
-            <a href="javascript:;" id="thumbs" data-action="love" data-id="652" role="button" class="btn btn-thumbs "><i class="kicon i-like"></i><span class="ml-1">点赞</span></a>
+            <a href="javascript:;" id="thumbs" data-action="love" data-id="<?php $this->cid()?>" role="button" class="btn btn-thumbs "><i class="kicon i-like"></i><span class="ml-1">点赞</span></a>
         </div>
     </div>
     <nav class="navigation post-navigation clearfix" role="navigation">
